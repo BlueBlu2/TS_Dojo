@@ -74,3 +74,50 @@ data ={
         size:512
     }
 }
+
+//-----Enum Types----
+enum Role {
+    Admin = 5,
+    Editor,
+    Guest
+}
+
+let userRole: Role;
+userRole = Role.Admin
+userRole = 6
+//userRole = 1 //->Error
+
+//another way to use enum like solution
+let newRole: 'Admin' | 'Editor' | 'Guest' = "Admin";
+
+let tuple: [1|-1, 1|-1];
+tuple = [-1,-1]
+//---Type Aliases | Custom Types---
+type AccessRole = 'Admin' | 'Editor' | 'Guest' |'Reader';
+
+let userType:AccessRole;
+userType = "Reader"
+
+type userPermissions = "Read" | "Write" | "Edit" | "Delete";
+
+type User = {
+    name: string;
+    age: number;
+    role: AccessRole;
+    permissions: userPermissions[];
+}
+
+let newUser: User = {
+    name:'Abc',
+    age: 20,
+    role: "Editor",
+    permissions: [
+        "Write",
+        "Read",
+        "Edit"
+    ]
+};
+
+function handleRoles(role: AccessRole){
+
+}
